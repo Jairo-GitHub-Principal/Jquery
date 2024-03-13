@@ -1,0 +1,25 @@
+.ex1{
+    width: 460px;
+    padding: 20px;
+    background: blueviolet;
+    margin:  0 auto;
+    text-align: center;
+    color:aliceblue;
+    border: 5px solid #ccc;
+    margin-top: 10px;
+}
+
+
+p,input{
+    width: 470px;
+    padding: 10px;
+    background: black;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: azure;
+    border: 5px solid #ccc;
+    margin-top: 10px;
+
+}

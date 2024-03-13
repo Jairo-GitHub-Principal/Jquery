@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="./js/jquery.js"> </script>
+
+
+
+</head>
+
+<body>
+    <img id="carregar">
+    <h1>jquery</h1>
+
+    <h2>Ponto canal </h2>
+
+   
+        <a href="#">link1</a>
+        <a href="#" class="link2">link2</a>
+        <a href="#"  id="link3">link3</a>
+   
+
+    </img>
+
+
+
+    <script type="text/javascript">
+         
+         //INICIALIZAÇÂO
+        // funcionou com jquery 3.7
+        $(window).on("load", function (e) {
+            alert('.on ');
+        });
+
+         // obsoleto mais funcionou com jquery 3.7
+        //  $(window).load("load", function () {
+        //     alert('.load');
+        // });
+
+
+        // funciona normalmente
+        // $(document).ready(function () {
+        //     alert('Dom Carregando...');
+        // });
+
+        
+        
+        
+        
+        // selecionar um elemento e e altera-los como atribuir cores mudar cores etc
+
+        $(document).ready(function(){ // instrução encadeada e em bloco:
+            /// poderiia ter sido feita separadas exemplo:
+            /*  $('h2').css("color","#f66")
+                $('h2').hiden()
+                $('h2').delay('1000')
+                $('h2').fadeIn("slow")
+            */
+          
+            $('h2')
+            .css("color","#f66")
+            .hide()
+            .delay('1000')
+            .fadeIn("slow")
+            .text('Curso jquery pontoCanal')// muda o nome ponto canal para o texto aqui indicado
+            .click(function(){
+                $('body').css("background","#c30");
+                $('h2').css("color","#fff");
+                $('a').css("color",'white');
+                $('.link2').css("color",'yellow');
+                $('#link3').css("color",'#8B008B');
+            });
+
+           
+            
+            // melhor forma parar atribuir estiilos atraves do bootstrap
+            //$('a').css("text-decoration","none"); // tira o grifado do texto
+            $('a').css({
+                color:'blue'
+                ,display:'block'
+                ,textDecoration:'none'
+                });// faz os liinks ficarem um embaixo do outro e muda a cor do mesmo
+
+
+             $('.link2').css({color:'orange'});
+             $('#link3').css({color:'black'});   
+
+
+             $('h2,a,.link2,#link3').css({ // selecionando multiplos elementos
+                padding:'10px',
+                border:'solid 2px blue',
+                fontSize:'20px',
+                width:'300px'
+             });
+
+        });
+
+
+       
+
+
+
+
+    </script>
+
+</body>
+
+</html>

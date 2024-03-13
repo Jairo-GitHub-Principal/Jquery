@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+</head>
+<body>
+    <div class="div1">
+        <h2 class="h2-da-div">h2 filho de divi</h2>
+        <p>P filho de divi <span>filho de p neto de div1  <span>Span filho de span neto de p que é filho de div1</span></span></p> 
+        <p>P2 filho de div</p>
+        <span>span filho direto de div</span>
+
+    </div>
+    <h2>fora de divi</h2>
+    <p class="p1">p1 fora de divi</p>
+    <p class="p2">p2 fora de divi</p>
+    <p class="p3">p3 fora de divi</p>
+    <p class="p4">p4 fora de divi</p>
+    <p class="p5">p5 fora de divi</p>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){ // esse ready faz uma especie de leitura da arvore DOM e possibilita acessar os seus elementos apos o seu carregamento
+            
+            // selecionar a div e definir um estilo, no qual eu possa identificar tudo que esta dentro dela
+            $('.div1').css({border:"solid 3px black",padding:'20px',width:"1000px",backgroundColor:"lightgrey"});
+
+
+            // selecionar os elementos filhos da div
+               /*.div1 .h2-da-div seleciona seleciona o h2 filho da div1
+                 .div1 p seleciona todos p filho da div1 e tambem atihge as tag fiilhas de p 
+                 .div span seleciona todas tag span dentro da div1, pdem ser filhos ou netos de div1
+               */ 
+            $('.div1 .h2-da-div,.div1 p').css({color:"blue",backgroundColor:"orange",border:"solid 1px blue",padding:"5px"}); // seleciono o h2 da divi 1 e o p da div1
+           
+            $('.div1 span').hide()
+                          .delay(1000)
+                          .fadeIn("slow")
+                          .css({fontSize:'25px', fontWeight:"bold",borderRadius:"10px",backgroundColor:'orange',padding:'5px',border:'solid 1px blue'});  
+
+            $('.div1 .h2-da-div').hide() // seleciona o h2 da div1
+                                 .css({'font-size':'30px',color:'green'})
+                                 .fadeIn(800);     
+                                 
+                                 
+            // selecionar o filho diireto de um elemento, de forma que os efeitos atriibuidos a ele não afete seu elemento pai 
+            // nesse caso vamos selecionar  os span 
+
+            // cada vez que coloca um ">" to indicando um nivel abaixo na hierarqui filho, neto,bisneto etc
+            // .div1 > span seleciona o span filho da div1 destacado na cor vermelha
+            // .div1 >> span  seleciona o span neto de div1 filho de p destaca na cor amarela
+            // .div1 >>> span  seleciona o span bisneto de div1 filho de span que é filho de p  destaca na cor amarela
+            $('.div1 > span').css({color:'red'}); // seleciionamos o span filho de div, de forma que os efeiitos atribuido a ele não atingira os outro span, neto da div1 
+            $('.div1 >> span').css({color:'yellow'})
+            $('.div1 >>> span').css({color:'white'});// serra selecinado todos os span é filho do filho do pai, ou seja: todos os span neto de div1 
+            
+            // selecinar um elemento apos o elemento alvo ou indicado 
+            // note que no codigo abaixo nos indicamos o .p1 e concatenamos com .p2, esse .p2
+            // sera o proximo elemto tag p apos o .p1, e note que o efeiito atribuido ao texto 'p2 fora de div'
+            // não vai atingir nem o p1 e nem o p2
+            $('.p1 + .p2').css({color:'blue'}); // o proximo elemento apos p1 sera destacado na cor azul
+
+            // selecinar e modificar todos os elemento apos o elemento alvo ou indicado ou primeiramente selecionado
+            $('.p2 ~ p').css({color:'darkorange'}); //  todos os elementos p apos p2 sera destacado na cor darkorange
+
+
+        
+        });
+    </script>
+    
+</body>
+</html>
