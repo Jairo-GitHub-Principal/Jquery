@@ -1,0 +1,69 @@
+body{
+    height: 2200px;
+}
+header.topo{
+    float:left;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    height: 150px;
+
+}
+
+.topo h1{
+
+    margin: 60px;
+    font-size: 40px;
+}
+
+.menu{
+    clear: both;
+    background-color: blue;
+    display: flex;
+    
+    
+}
+
+.menu ul{
+    list-style: none;
+    color: white;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+   text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    border: solid 1px black;
+   
+
+    }
+.menu ul li{
+    display:  inline;
+    margin: 10px;
+
+}
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+/* efeito que sera usado pelo jquery para fixar o menu no topo quando scrow atingirr um determinado valor*/
+
+.menu-fixo{
+    position: fixed;
+    top:0;
+    z-index:999;
+    width: 100%;
+}
+
+
+p{
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+main{
+    background-color: yellow;
+}
